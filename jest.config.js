@@ -185,4 +185,6 @@ module.exports = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
+  preset: '/Users/qbuser/Documents/Puppeteer/node_modules/jest-puppeteer',
+
 };

@@ -10,18 +10,22 @@ beforeAll(async() =>{
     slowMo: 200,
     args: [`--window-size=${width},${height}`]
   });
-  page = await browser.newPage();
+  //page = await browser.newPage();
   
 });
+describe('title validation',()=>
+{
 test('Verify the title of the page',
 async() =>{
-  //await page.setViewport({ width, height });
+  await page.setViewport({ width, height });
+  page = await browser.newPage();
   await page.goto('https://www.linkedin.com/login?');
   await page.screenshot({path: 'example2.png'});
   const pageTitle = await page.title(); 
   console.log(pageTitle);
   expect(pageTitle).toBe('LinkedIn Login, Sign in | LinkedIn');
 
+});
 });
 describe('contact form validation',()=>
 {
