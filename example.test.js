@@ -15,8 +15,10 @@ beforeAll(async() =>{
 });
 test('Verify the title of the page',
 async() =>{
-  //await page.setViewport({ width, height });
-  await page.goto('https://www.linkedin.com/login?');
+  await page.setViewport({ width, height });
+  await page.goto('https://www.linkedin.com/login?', {
+		waitUntil: 'networkidle2'
+	});
   await page.screenshot({path: 'example2.png'});
   const pageTitle = await page.title(); 
   console.log(pageTitle);
@@ -26,10 +28,11 @@ async() =>{
 describe('contact form validation',()=>
 {
   test(' verify email field', async()=>{
-  await page.waitForSelector('[#username]');
-  
-  }, 1000
-  );
+  await page.waitForSelector("[id='username']");
+  const myElement  = page.waitForSelector("[id='username']");
+  expect(myElement).toBeTruthy;
+  await page.screenshot({path: 'verifyEmailFieldIsPresent.png'});
+  });
 });
 
 afterAll(async() =>{
