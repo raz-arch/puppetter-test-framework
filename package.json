@@ -11,7 +11,7 @@
   "dependencies": {
     "date-utils": "^1.2.21",
     "mocha": "^6.2.0",
-    "nodemailer": "^6.3.0",
+    "nodemailer": "^6.4.16",
     "puppeteer": "^1.19.0",
     "puppeteer-edge": "^0.12.4",
     "puppeteer-firefox": "^0.5.0",
