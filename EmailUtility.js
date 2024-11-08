@@ -33,8 +33,8 @@ class Email {
    			 port: 465,
     		secure: true,
     		auth: {
-        		user: 'razgamer08@gmail.com',
-				pass: 'razergamer11'
+        		user: 'test@gmail.com',
+				pass: 'pswd'
 			}
 		});
 		var dateNow = new Date();
@@ -48,8 +48,8 @@ class Email {
 		console.log(mailSubject);
 
         const mailOptions = {
-            from: 'razgamer08@gmail.com', // Update from email
-            to: 'rahulraj@qburst.com',
+            from: 'test@gmail.com', // Update from email
+            to: 'test@test.com',
             subject: mailSubject,
             text: text,
             attachments: [{
@@ -72,7 +72,7 @@ class Email {
     const url = 'https://www.google.com';
     const buffer = await Webpage.generatePDF(url);
     Email.sendEmail(
-        'rahulraj@qburst.com', // Update to email
+        'test@test.com', // Update to email
         'Automation Test Report',
         'I thought you might enjoy this book!',
         'Alice in Wonderland.pdf',
